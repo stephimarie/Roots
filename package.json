@@ -14,18 +14,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxx-808/Roots.git"
+    "url": "git+https://github.com/stephimarie/Roots.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maxx-808/Roots/issues"
+    "url": "https://github.com/stephimarie/Roots/issues"
   },
-  "homepage": "https://github.com/maxx-808/Roots#readme",
+  "homepage": "https://github.com/stephimarie/Roots#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.19"
   }
 }
