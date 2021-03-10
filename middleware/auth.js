@@ -9,9 +9,9 @@ const auth = (req, res, next) => {
       return res.status(401).json({ msg: "No token passed." });
     }
 
-    const verify = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
 
-    if (!verify) {
+    if (!verified) {
       return res.status(401).json({ msg: "Token verification failed." });
     }
 

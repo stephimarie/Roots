@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   register: async (req, res) => {
+    console.log("im inside register inside usercontroller");
     try {
       const {
         email,
@@ -32,13 +33,19 @@ module.exports = {
           .json({ msg: "password needs to be longer than 8 characters" });
       }
 
+      if (password !== passwordCheck) {
+        return res
+          .status(400)
+          .json({ msg: "password does not match the password check" });
+      }
+
       const existingUser = await User.findOne({ email: email });
 
       if (existingUser) {
         return res.status(400).json({ msg: "User already exists" });
       }
 
-      const salt = await bcrypt.genSalt(15);
+      const salt = await bcrypt.genSalt();
       const passwordHash = await bcrypt.hash(password, salt);
 
       const newUser = new User({
@@ -58,24 +65,22 @@ module.exports = {
 
   login: async (req, res) => {
     try {
-      const { displayName, password } = req.body;
+      const { email, password } = req.body;
 
-      if (!displayName || !password) {
-        res.status(400).json({ msg: "Must enter all feilds." });
+      if (!email || !password) {
+        res.status(400).json({ msg: "all required fields were not sent" });
       }
 
-      const user = await User.findOne({ displayName: displayName });
-
+      const user = await User.findOne({ email: email });
+      console.log(user);
       if (!user) {
-        res.status(400).json({
-          msg: "User doesnt exsist! Please sign up on the register page.",
-        });
+        res.status(400).json({ msg: "User downs exist" });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
-        res.status(400).json({ msg: "incorrect password entered" });
+        res.status(400).json({ msg: "this was an incorrect password" });
       }
 
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
