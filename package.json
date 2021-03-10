@@ -32,7 +32,6 @@
     "mongoose": "^5.11.19",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.19"
+    "jsonwebtoken": "^8.5.1"
   }
 }
