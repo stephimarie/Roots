@@ -38,8 +38,8 @@ const Login = () => {
 
   return (
     <div>
-      <h3>Through your roots we grow together.</h3>
-      <h5>The app that creates cross-cultural and linguistic conversations.</h5>
+      <h4>Through your roots we grow together.</h4>
+      <h6>The app that creates cross-cultural and linguistic conversations.</h6>
 
       <form onSubmit={submitLoginForm} className="login-form">
         <label>email</label>
