@@ -5,7 +5,6 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   register: async (req, res) => {
-    console.log("im inside register inside usercontroller");
     try {
       const {
         email,
@@ -55,6 +54,9 @@ module.exports = {
         native_lang,
         learn_lang,
       });
+
+      req.name = displayName;
+      req.message = `Hello, my native language is ${native_lang}. I am currently trying to learn ${learn_lang}. Is there anyone who speaks ${learn_lang}?`;
 
       const savedUser = await newUser.save();
       res.json(savedUser);
