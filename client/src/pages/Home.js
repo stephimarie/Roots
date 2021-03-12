@@ -14,6 +14,8 @@ const Home = (props) => {
 
   return (
     <div>
+      <h3>Through your roots we grow together.</h3>
+
       <h1>Hello from Home Page</h1>
       <h3>Your name is: {userData.user?.displayName}</h3>
       {/* <PostContainer /> */}
