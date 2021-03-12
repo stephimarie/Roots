@@ -21,7 +21,7 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={submit}>
+      <form onSubmit={submit} className="reg-form">
         <label>Email</label>
         <input onChange={onChange} type="text" name="email" />
         <label>Password</label>

@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../Context/UserContext.js";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "../App.css";
+
 
 const Login = () => {
   const [form, setForm] = useState();
@@ -36,7 +38,8 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={submitLoginForm}>
+
+      <form onSubmit={submitLoginForm} className="login-form">
         <label>email</label>
         <input onChange={onChange} type="text" name="email" />
         <label>Password</label>

@@ -1,0 +1,10 @@
+.footer {
+    bottom: 0px;
+    position: absolute;
+    height: 100px;
+}
+
+#text{
+    margin: auto;
+    width: fit-content;
+}
