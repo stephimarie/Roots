@@ -4,7 +4,7 @@ import "./style.css";
 function Footer () {
     return (
     
-        <div class="footer">
+        <div className="footer">
             <h4 id="text">Copy</h4>
             
         </div>

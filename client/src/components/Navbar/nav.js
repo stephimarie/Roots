@@ -6,7 +6,7 @@ import "./style.css"
 function Nav (){
     return (
         <nav>
-        <div class="nav-wrapper">
+        <div className="nav-wrapper">
           <a href="#" className="brand-logo">Roots</a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link to="/login">Login</Link></li>
