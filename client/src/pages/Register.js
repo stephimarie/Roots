@@ -21,7 +21,10 @@ const Register = () => {
 
   return (
     <div>
-      <form onSubmit={submit}>
+      <h4>Through your roots we grow together.</h4>
+      <h6>The app that allows you to connect cross-culturally and create multilingual conversations!</h6>
+
+      <form onSubmit={submit} className="reg-form">
         <label>Email</label>
         <input onChange={onChange} type="text" name="email" />
         <label>Password</label>
