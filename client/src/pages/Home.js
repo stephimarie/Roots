@@ -14,10 +14,6 @@ const Home = (props) => {
 
   return (
     <div>
-      {/* <div className="slogans">
-        <h3>Through your roots we grow together.</h3>
-      </div> */}
-  
       <h1>Hello from Home Page</h1>
       <h3>Your name is: {userData.user?.displayName}</h3>
       <PostContainer />
