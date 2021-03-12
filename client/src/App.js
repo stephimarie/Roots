@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Nav from "./components/Navbar/nav"
 
 import UserContext from "./Context/UserContext";
+import Footer from "./components/Footer/footer";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -44,7 +46,7 @@ function App() {
       <Router>
         {!userData.user ? (
           <>
-            <Link to="/login">Login</Link> <Link to="/register">Register</Link>
+           < Nav />
           </>
         ) : (
           <Link to="/" onClick={logout}>
@@ -60,6 +62,7 @@ function App() {
           </Switch>
         </UserContext.Provider>
       </Router>
+      <Footer />
     </div>
   );
 }
