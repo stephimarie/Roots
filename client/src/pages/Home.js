@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-// import PostContainer from "../Components/PostContainer";
+import PostContainer from "../Components/PostContainer";
 import UserContext from "../Context/UserContext";
 
 const Home = (props) => {
@@ -15,7 +15,7 @@ const Home = (props) => {
     <div>
       <h1>Hello from Home Page</h1>
       <h3>Your name is: {userData.user?.displayName}</h3>
-      {/* <PostContainer /> */}
+      <PostContainer />
     </div>
   );
 };

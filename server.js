@@ -27,8 +27,8 @@ if (process.env.NODE_ENV == "production") {
 }
 
 //calling the routes
-app.use("/users", require("./routes/userRoutes"));
-app.use("/posts", require("./routes/postRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/posts", require("./routes/postRoutes"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));

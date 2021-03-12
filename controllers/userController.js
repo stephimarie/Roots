@@ -2,6 +2,7 @@ require("dotenv").config();
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { newPost } = require("../controllers/PostController");
 
 module.exports = {
   register: async (req, res) => {
@@ -55,10 +56,20 @@ module.exports = {
         learn_lang,
       });
 
-      req.name = displayName;
-      req.message = `Hello, my native language is ${native_lang}. I am currently trying to learn ${learn_lang}. Is there anyone who speaks ${learn_lang}?`;
-
       const savedUser = await newUser.save();
+
+      const userObj = {
+        displayName,
+        message: `Hello, my native language is ${native_lang}. I am currently trying to learn ${learn_lang}. Is there anyone who speaks ${learn_lang}?`,
+        chat: [],
+        userId: savedUser.id,
+      };
+      const postSuccess = await newPost(userObj);
+      if (postSuccess) {
+        console.log("post successful");
+      } else {
+        console.log("post unsuccessful");
+      }
       res.json(savedUser);
     } catch (err) {
       res.status(500).json({ msg: err });

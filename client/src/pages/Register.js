@@ -12,7 +12,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const newUser = await axios.post("users/register", form);
+      const newUser = await axios.post("/api/users/register", form);
       console.log(newUser);
     } catch (err) {
       console.log(err.response);

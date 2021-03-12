@@ -1,19 +1,21 @@
 const Post = require("../models/postModel");
 
 module.exports = {
-  newPost: async (req, res) => {
+  newPost: async (userObj) => {
     try {
       const newPost = new Post({
-        displayName: req.name,
-        message: req.message,
-        chat,
-        userId: req.user,
+        displayName: userObj.displayName,
+        message: userObj.message,
+        chat: userObj.chat,
+        userId: userObj.userId,
       });
 
       const successSave = await newPost.save();
-      res.json(successSave);
+      console.log(successSave);
+      return true;
     } catch (err) {
-      res.send("error saving: ", err);
+      console.log("error saving: ", err);
+      return false;
     }
   },
 
