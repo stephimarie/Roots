@@ -8,6 +8,7 @@ import Nav from "./components/Navbar/nav"
 
 import UserContext from "./Context/UserContext";
 import Footer from "./components/Footer/footer";
+import Slogan from "./components/Slogan/slogan";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -47,6 +48,7 @@ function App() {
         {!userData.user ? (
           <>
            < Nav />
+           < Slogan />
           </>
         ) : (
           <Link to="/" onClick={logout}>
