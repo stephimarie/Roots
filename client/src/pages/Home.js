@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import PostContainer from "../Components/PostContainer";
+import PostContainer from "../components/PostContainer";
 import UserContext from "../Context/UserContext";
 
 
