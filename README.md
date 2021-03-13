@@ -1,4 +1,4 @@
-# Online / Offline Budget Trackers.
+# Roots
 
 ## <img src="https://img.shields.io/badge/LICENSE-mit-green"/>
 
