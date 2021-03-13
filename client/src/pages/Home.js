@@ -8,6 +8,7 @@ const Home = (props) => {
   const { userData } = useContext(UserContext);
   const history = useHistory();
 
+  console.log("userData", userData);
   useEffect(() => {
     if (!userData.user) history.push("/login");
   }, [userData.user, history]);
