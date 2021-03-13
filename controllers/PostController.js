@@ -20,7 +20,7 @@ module.exports = {
   },
 
   getUserPosts: async (req, res) => {
-    console.log("hiiiii");
+    console.log("got users");
 
     try {
       const allPosts = await Post.find({ userId: req.user });
