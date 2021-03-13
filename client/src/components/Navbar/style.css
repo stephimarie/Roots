@@ -5,9 +5,11 @@ nav{
     width: 100vw;
 }
 
-a.brand-logo {
+.brand-logo {
     font-family: 'Fascinate', cursive;
-    font-size: 50px;
     width: fit-content;
     margin: auto;
+    margin-top: 15px;
+    margin-left: -50px;
+    font-size: 50px;
 }
