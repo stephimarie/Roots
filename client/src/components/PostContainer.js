@@ -3,8 +3,7 @@ import axios from "axios";
 
 const PostContainer = () => {
   // const [form, setForm] = useState({ title: "", text: "" });
-  const [posts, setPosts] = useState();
-
+  const [posts, setPosts] = useState([]);
   // const onChange = (e) => {
   //   setForm({ ...form, [e.target.name]: e.target.value });
   // };
@@ -32,7 +31,7 @@ const PostContainer = () => {
           cancelToken: source.token,
           headers: { "x-auth-token": localStorage.getItem("auth-token") },
         });
-        console.log("allPosts", allPosts.data);
+
         setPosts(allPosts.data);
       } catch (err) {
         axios.isCancel(err)
@@ -46,21 +45,17 @@ const PostContainer = () => {
   return (
     <div>
       <h1>hello from post container</h1>
-      {/* <form onSubmit={submitPost}>
-        <input onChange={onChange} type="text" name="title" />
-        <input onChange={onChange} type="text" name="text" />
-        <button type="submit">Submit</button>
-      </form> */}
 
       <div className="allPosts">
-        {/* {posts.map((post, index) => (
-          <div key={index}>
+        {posts.map((post, index) => (
+          <div className="card" key={index}>
             <h3>{post.displayName}</h3>
             <p>{post.message}</p>
+            {post.chat.map((chat, index) => {
+              <p key={index}>{chat}</p>;
+            })}
           </div>
-        ))} */}
-        {/* <h3>{allPosts.displayName}</h3>
-        <p>{allPosts.message}</p> */}
+        ))}
       </div>
     </div>
   );
