@@ -8,6 +8,7 @@ import Nav from "./components/Navbar/nav";
 
 import UserContext from "./Context/UserContext";
 import Footer from "./components/Footer/footer";
+import Slogan from "./components/Slogan/slogan";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -46,12 +47,17 @@ function App() {
       <Router>
         {!userData.user ? (
           <>
-            <Nav />
+           < Nav />
+           < Slogan />
           </>
         ) : (
-          <Link to="/" onClick={logout}>
+          <nav className="nav-wrapper">
+          <h2 className="brand-logo">Roots</h2>
+          <ul id="nav-mobile" className="right hide-on-med-and-down"></ul>
+          <Link style={{float:"right", paddingRight:"20px"}} to="/" onClick={logout}>
             Logout
           </Link>
+          </nav>
         )}
 
         <UserContext.Provider value={{ userData, setUserData }}>
