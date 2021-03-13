@@ -30,7 +30,7 @@ const PostContainer = () => {
       try {
         const allPosts = await axios.get("/api/posts", {
           cancelToken: source.token,
-          headers: { "x-auth-token": localStorage.getItem("auth-token") },
+          // headers: { "x-auth-token": localStorage.getItem("auth-token") },
         });
 
         setPosts(allPosts.data);
@@ -52,9 +52,15 @@ const PostContainer = () => {
           <div style={{background:"rgba(255, 255, 255, 0.349)", marginTop:"50px"}} className="card" key={index}>
             <h3>{post.displayName}</h3>
             <p>{post.message}</p>
-            {post.chat.map((chat, index) => {
-              <p key={index}>{chat}</p>;
-            })}
+            <form>
+              <input type="text" className="chatInput" placeholder="message" />
+              <button type="submit" className="chatSubmit">
+                submit
+              </button>
+            </form>
+            {post.chat.map((msg, index) => (
+              <p key={index}>{msg}</p>
+            ))}
           </div>
         ))}
       </div>

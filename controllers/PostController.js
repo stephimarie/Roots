@@ -23,7 +23,7 @@ module.exports = {
     console.log("got users");
 
     try {
-      const allPosts = await Post.find({ userId: req.user });
+      const allPosts = await Post.find();
       res.json(allPosts);
     } catch (err) {
       console.log("ERROR WAS CREATED", err);
