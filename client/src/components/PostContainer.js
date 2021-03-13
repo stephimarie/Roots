@@ -55,7 +55,7 @@ const PostContainer = () => {
             <form>
               <input style={{color:"lightGrey"}} type="text" className="chatInput" placeholder="Type message here:" />
               <button style={{marginBottom:"10px", marginTop:"10px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" className="chatSubmit">
-                submit
+                Send
               </button>
             </form>
             {post.chat.map((msg, index) => (
