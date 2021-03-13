@@ -4,6 +4,7 @@ import UserContext from "../Context/UserContext";
 import Slogan from "../components/Slogan/slogan";
 import PostContainer from "../components/PostContainer";
 
+
 const Home = (props) => {
   const { userData } = useContext(UserContext);
   const history = useHistory();
@@ -15,8 +16,6 @@ const Home = (props) => {
   return (
     <div>
       <Slogan />
-
-      <h3>Your name is: {userData.user?.displayName}</h3>
       <PostContainer />
     </div>
   );
