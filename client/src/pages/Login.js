@@ -39,11 +39,12 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={submitLoginForm} className="login-form">
+        <h1 style={{padding:"auto"}}>Login:</h1>
         <label>email</label>
         <input onChange={onChange} type="text" name="email" />
         <label>Password</label>
         <input onChange={onChange} type="text" name="password" />
-        <input type="submit" name="Login" />
+        <input style={{marginTop:"20px"}} type="submit" name="Login" />
       </form>
     </div>
   );
