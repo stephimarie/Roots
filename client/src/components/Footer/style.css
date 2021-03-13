@@ -1,11 +1,11 @@
 .footer {
-    margin-bottom: 0px;
-    position: fixed;
-    bottom: 10px;
-    width: 100vw;
+  margin-bottom: 0px;
+  position: fixed;
+  bottom: 10px;
+  width: 100vw;
 }
 
-#text{
-    width: fit-content;
-    margin: auto;
+#text {
+  width: fit-content;
+  margin: auto;
 }
