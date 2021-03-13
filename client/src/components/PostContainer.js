@@ -54,7 +54,7 @@ const PostContainer = () => {
             <p>{post.message}</p>
             <form>
               <input style={{color:"lightGrey"}} type="text" className="chatInput" placeholder="Type message here:" />
-              <button style={{marginBottom:"10px", marginTop:"10px", backgroundColor:"lightGrey"}} type="submit" className="chatSubmit">
+              <button style={{marginBottom:"10px", marginTop:"10px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" className="chatSubmit">
                 submit
               </button>
             </form>
