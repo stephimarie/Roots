@@ -10,22 +10,28 @@
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postBuild": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxx-808/Roots.git"
+    "url": "git+https://github.com/stephimarie/Roots.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maxx-808/Roots/issues"
+    "url": "https://github.com/stephimarie/Roots/issues"
   },
-  "homepage": "https://github.com/maxx-808/Roots#readme",
+  "homepage": "https://github.com/stephimarie/Roots#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.11.19"
+    "mongoose": "^5.11.19",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "jsonwebtoken": "^8.5.1"
   }
 }
