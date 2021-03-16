@@ -44,7 +44,7 @@ const Login = () => {
         <input onChange={onChange} type="text" name="email" />
         <label>Password</label>
         <input onChange={onChange} type="text" name="password" />
-        <input style={{marginTop:"20px"}} type="submit" name="Login" />
+        <input style={{marginTop:"20px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" name="Login" />
       </form>
     </div>
   );

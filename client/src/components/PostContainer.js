@@ -49,13 +49,13 @@ const PostContainer = () => {
 
       <div className="container">
         {posts.map((post, index) => (
-          <div style={{background:"rgba(255, 255, 255, 0.349)", marginTop:"50px"}} className="card" key={index}>
+          <div style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"50px", borderRadius:"15px"}} className="card" key={index}>
             <h3>{post.displayName}</h3>
             <p>{post.message}</p>
             <form>
-              <input type="text" className="chatInput" placeholder="message" />
-              <button type="submit" className="chatSubmit">
-                submit
+              <input style={{color:"lightGrey"}} type="text" className="chatInput" placeholder="Type message here:" />
+              <button style={{marginBottom:"10px", marginTop:"10px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" className="chatSubmit">
+                Send
               </button>
             </form>
             {post.chat.map((msg, index) => (

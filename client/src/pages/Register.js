@@ -35,7 +35,7 @@ const Register = () => {
         <input onChange={onChange} type="text" name="native_lang" />
         <label>Language you want to learn:</label>
         <input onChange={onChange} type="text" name="learn_lang" />
-        <input style={{marginTop:"20px"}} type="submit" name="Register" />
+        <input style={{marginTop:"20px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" name="Register" />
       </form>
     </div>
   );
