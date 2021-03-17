@@ -1,8 +1,6 @@
 .footer {
-  margin-bottom: 0px;
-  position: fixed;
-  bottom: 10px;
-  width: 100vw;
+  width: 100%;
+
 }
 
 #text {
