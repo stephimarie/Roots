@@ -45,6 +45,7 @@
   border: black 1px solid;
   margin-top: 30px;
   padding-bottom: 30px;
+  margin-bottom: 100px;
 }
 body {
   background: #ffd89b;  /* fallback for old browsers */
