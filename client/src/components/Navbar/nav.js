@@ -8,7 +8,11 @@ function Nav() {
   return (
     <nav>
       <div className="nav-wrapper">
-      <img id="logo" src="https://img.icons8.com/ios/100/000000/tms-tree.png"/>
+        <img
+          id="logo"
+          src="https://img.icons8.com/ios/100/000000/tms-tree.png"
+          alt="roots logo"
+        />
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <Link to="/login">Login</Link>
