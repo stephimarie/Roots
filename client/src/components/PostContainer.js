@@ -45,9 +45,9 @@ const PostContainer = () => {
 
   return (
     <div>
-      <h1 style={{marginTop:"30px"}}>Welcome to Roots!!</h1>
+      <h1 style={{marginTop:"30px", fontFamily:"'Akaya Telivigala', cursive"}}>Post a comment to our global community below and start connecting!</h1>
 
-      <div className="container">
+      <div style={{marginBottom:"70px"}} className="container">
         {posts.map((post, index) => (
           <div style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"50px", borderRadius:"15px"}} className="card" key={index}>
             <h3>{post.displayName}</h3>
