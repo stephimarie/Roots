@@ -14,7 +14,7 @@ const Clock2 = () => {
 
     return (
         <div>
-            <h1>Hello</h1>
+        
         </div>
     )
 }
