@@ -32,32 +32,36 @@ module.exports = {
   },
 
   sendChat: async (req, res) => {
-    const chat = {
-      displayName: req.body.displayName,
-      chat: req.body.chat,
-    };
-    console.log("chat", chat);
-    const FoundPost = await Post.find(
-      {
-        userId: req.body.userId,
-      },
-      (err, data) => {
-        if (err) {
-          console.log("sendChat", err);
-          return;
-        } else {
-          console.log("sendchat data", data);
-          return;
+    try {
+      const chat = {
+        displayName: req.body.displayName,
+        chat: req.body.chat,
+      };
+      console.log("chat", chat);
+      const FoundPost = await Post.find(
+        {
+          userId: req.body.userId,
+        },
+        (err, data) => {
+          if (err) {
+            console.log("sendChat", err);
+            return;
+          } else {
+            console.log("sendchat data", data);
+            return;
+          }
         }
-      }
-    );
-    // FoundPost.chat.push(chat);
-    const chatPush = await Post.updateOne(
-      { _id: FoundPost._id },
-      {
-        $addToSet: { chat: chat },
-      }
-    );
-    res.json(chatPush);
+      );
+      // FoundPost.chat.push(chat);
+      await Post.updateOne(
+        { _id: FoundPost._id },
+        {
+          $push: { chat: chat },
+        }
+      );
+      // res.json(chatPush);
+    } catch (err) {
+      console.log("setChat post controller", err);
+    }
   },
 };
