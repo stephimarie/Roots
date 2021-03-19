@@ -60,6 +60,14 @@ const Clock2 = () => {
                     </span>
                 </div>
             </div>
+            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"5px", marginLeft:"10px", marginRight:"10px", borderRadius:"10px"}}>
+                <div className="card-panel black">
+                    <span className="white-text">
+                        Sydney
+
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }
