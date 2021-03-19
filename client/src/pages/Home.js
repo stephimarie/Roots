@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import Slogan from "../components/Slogan/slogan";
 import PostContainer from "../components/PostContainer";
+// import ClockApp from "../components/Clock/clock";
+import ClockApp from "../components/Clock/Clock2";
 
 
 const Home = (props) => {
@@ -15,6 +17,7 @@ const Home = (props) => {
   }, [userData.user, history]);
   return (
     <div>
+      <ClockApp />
       <Slogan />
       <PostContainer />
     </div>

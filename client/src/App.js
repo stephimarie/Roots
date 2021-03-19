@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
@@ -9,6 +9,8 @@ import Nav from "./components/Navbar/nav";
 import UserContext from "./Context/UserContext";
 import Footer from "./components/Footer/footer";
 import Slogan from "./components/Slogan/slogan";
+import Clock from "react-clock";
+import Landing from "./pages/Landing";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -20,16 +22,15 @@ function App() {
     let token = localStorage.getItem("auth-token");
     if (token === null) {
       localStorage.setItem("auth-token", "");
-    } else {
-      try {
-        const userRes = await axios.get("/api/users", {
-          headers: { "x-auth-token": token },
-        });
+    }
+    try {
+      const userRes = await axios.get("/api/users", {
+        headers: { "x-auth-token": token },
+      });
 
-        setUserData({ token, user: userRes.data });
-      } catch (err) {
-        console.log("User must login");
-      }
+      setUserData({ token, user: userRes.data });
+    } catch (err) {
+      console.log("User must login");
     }
   };
 
@@ -53,9 +54,8 @@ function App() {
         ) : (
           <nav className="nav-wrapper">
             <img
-              style={{ marginLeft: "60px" }}
+              style={{ marginLeft: "60px", width: "90px", paddingTop: "5px" }}
               src="https://img.icons8.com/ios/100/000000/tms-tree.png"
-              alt="roots logo"
             />
             <ul id="nav-mobile" className="right hide-on-med-and-down"></ul>
             <Link
@@ -70,9 +70,10 @@ function App() {
 
         <UserContext.Provider value={{ userData, setUserData }}>
           <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/" component={Home} />
           </Switch>
         </UserContext.Provider>
       </Router>

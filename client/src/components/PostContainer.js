@@ -72,9 +72,13 @@ const PostContainer = () => {
 
   return (
     <div>
-      <h1 style={{ marginTop: "30px" }}>Welcome to Roots!!</h1>
+      <h1
+        style={{ marginTop: "30px", fontFamily: "'Akaya Telivigala', cursive" }}
+      >
+        Post a comment to our global community below and start connecting!
+      </h1>
 
-      <div className="container">
+      <div style={{ marginBottom: "70px" }} className="container">
         {posts.map((post, index) => (
           <div
             style={{
@@ -89,9 +93,8 @@ const PostContainer = () => {
             <p>{post.message}</p>
             <form>
               <input
-                style={{ color: "lightGrey" }}
+                style={{ color: "black" }}
                 type="text"
-                id={post.userId}
                 className="chatInput"
                 placeholder="Type message here:"
               />
@@ -102,9 +105,7 @@ const PostContainer = () => {
                   backgroundColor: "lightGrey",
                   borderRadius: "10px",
                 }}
-                onClick={setChat}
-                id={post.userId}
-                // type="submit"
+                type="submit"
                 className="chatSubmit"
               >
                 Send
