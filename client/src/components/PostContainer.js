@@ -50,7 +50,9 @@ const PostContainer = () => {
   const setChat = async (e) => {
     e.preventDefault();
     const btnId = e.target.id;
-    const chatInput = document.getElementById(btnId);
+    console.log("btnID", btnId);
+    const chatInput = document.getElementById("chat" + btnId);
+    console.log(chatInput);
     const dpName = userData.user.displayName;
 
     const chatObj = {
@@ -58,11 +60,13 @@ const PostContainer = () => {
       userId: btnId,
       chat: chatInput.value,
     };
+    console.log("chatObj", chatObj);
     try {
       const newChat = await axios
         .post("/api/posts/chat", chatObj)
         .then((res) => {
           console.log(res);
+          console.log("newChat call");
         });
       console.log("newChat", newChat);
     } catch (err) {
@@ -95,6 +99,7 @@ const PostContainer = () => {
               <input
                 style={{ color: "black" }}
                 type="text"
+                id={"chat" + post.userId}
                 className="chatInput"
                 placeholder="Type message here:"
               />
@@ -105,7 +110,9 @@ const PostContainer = () => {
                   backgroundColor: "lightGrey",
                   borderRadius: "10px",
                 }}
-                type="submit"
+                // type="submit"
+                onClick={setChat}
+                id={post.userId}
                 className="chatSubmit"
               >
                 Send
