@@ -37,7 +37,6 @@ module.exports = {
         displayName: req.body.displayName,
         chat: req.body.chat,
       };
-      console.log("chat", chat);
       const FoundPost = await Post.find(
         {
           userId: req.body.userId,
@@ -47,18 +46,20 @@ module.exports = {
             console.log("sendChat", err);
             return;
           } else {
-            console.log("sendchat data", data);
-            return;
+            return data;
           }
         }
       );
+
       // FoundPost.chat.push(chat);
       await Post.updateOne(
-        { _id: FoundPost._id },
+        { _id: FoundPost[0]._id },
         {
           $push: { chat: chat },
         }
-      );
+      ).then((res) => {
+        return;
+      });
       // res.json(chatPush);
     } catch (err) {
       console.log("setChat post controller", err);
