@@ -1,10 +1,11 @@
 import {useState, useEffect} from "react";
 import './style.css';
-import moment, { momentTimezone } from "moment";
-// import { momentTimezone } from "momentTimezone";
+// import moment from "moment";
+import moment from "moment-timezone";
+import Timezone from "./Timezone";
 
 const Clock2 = () => {
-    // const [date,setDate] = useState(new Date())
+    const [date,setDate] = useState(moment())
     // useEffect(() => {
     //     let timer= setInterval(()=>{
     //         setDate(new Date())
@@ -17,57 +18,24 @@ const Clock2 = () => {
 
 // const timezones = moment().format('LTS');
 //     const SF = 
+    useEffect(() => {
+        const time = setInterval(getCurrentTime, 1000)
+        return () => {
+            clearInterval(time)
+            }
+    }, [])
+    const getCurrentTime = () => {
+        setDate(moment())
+    }    
     
     return (
         <div id="timezones" className="row">
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        San Francisco
-
-                    </span>
-                </div>
-            </div>
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        New York
-
-                    </span>
-                </div>
-            </div>
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        London
-
-                    </span>
-                </div>
-            </div>
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        Moscow
-
-                    </span>
-                </div>
-            </div>
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        Tokyo
-
-                    </span>
-                </div>
-            </div>
-            <div className="col s3 m6" style={{background:"rgba(255, 255, 255, 0.250)", marginTop:"10px", marginLeft:"10px", marginRight:"10px", borderRadius:"5px", paddingTop:"5px"}}>
-                <div style={{backgroundColor:"rgba(0, 0, 0, 0)"}} className="card-panel ">
-                    <span className="black-text">
-                        Sydney
-
-                    </span>
-                </div>
-            </div>
+            <Timezone name="San Francisco" date={date.tz('America/Los_Angeles').format('LTS')}/>
+            <Timezone name="New York" date={date.tz('America/New_York').format('LTS')}/>
+            <Timezone name="London" date={date.tz('Europe/London').format('LTS')}/>
+            <Timezone name="Moscow" date={date.tz('Europe/Moscow').format('LTS')}/>
+            <Timezone name="Tokyo" date={date.tz('Asia/Tokyo').format('LTS')}/>
+            <Timezone name="Sydney" date={date.tz('Australia/Sydney').format('LTS')}/>
         </div>
     )
 }
