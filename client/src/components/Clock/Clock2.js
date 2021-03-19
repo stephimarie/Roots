@@ -60,7 +60,6 @@ const Clock2 = () => {
                     </span>
                 </div>
             </div>
-        <div>
         </div>
     )
 }
