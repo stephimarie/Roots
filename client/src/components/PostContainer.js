@@ -7,26 +7,6 @@ const PostContainer = () => {
   const [posts, setPosts] = useState([]);
   const { userData } = useContext(UserContext);
 
-  // const [form, setForm] = useState({ title: "", text: "" });
-
-  // const onChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-
-  // const submitPost = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const newPost = await axios.post("/api/posts", form, {
-  //       headers: { "x-auth-token": localStorage.getItem("auth-token") },
-  //     });
-
-  //     setPosts([...posts, newPost]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   useEffect(() => {
     let cancelToken = axios.CancelToken;
     let source = cancelToken.source();
@@ -50,27 +30,28 @@ const PostContainer = () => {
   const setChat = async (e) => {
     e.preventDefault();
     const btnId = e.target.id;
-    console.log("btnID", btnId);
     const chatInput = document.getElementById("chat" + btnId);
-    console.log(chatInput);
     const dpName = userData.user.displayName;
 
-    const chatObj = {
-      displayName: dpName,
-      userId: btnId,
-      chat: chatInput.value,
-    };
-    console.log("chatObj", chatObj);
-    try {
-      const newChat = await axios
-        .post("/api/posts/chat", chatObj)
-        .then((res) => {
-          console.log(res);
-          console.log("newChat call");
-        });
-      console.log("newChat", newChat);
-    } catch (err) {
-      console.log(err);
+    if (!chatInput.value) {
+      alert("Please enter your message before sending");
+    } else {
+      const chatObj = {
+        displayName: dpName,
+        userId: btnId,
+        chat: chatInput.value,
+      };
+
+      try {
+        const newChat = await axios
+          .post("/api/posts/chat", chatObj)
+          .then(() => {
+            return;
+          });
+        console.log("newChat", newChat);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -119,7 +100,7 @@ const PostContainer = () => {
               </button>
             </form>
             {post.chat.map((msg, index) => (
-              <p key={index}>{msg}</p>
+              <p key={index}>{msg.chat}</p>
             ))}
           </div>
         ))}
