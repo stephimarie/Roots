@@ -17,8 +17,8 @@ const Home = (props) => {
   }, [userData.user, history]);
   return (
     <div>
-      <Slogan />
       <ClockApp />
+      <Slogan />
       <PostContainer />
     </div>
   );
