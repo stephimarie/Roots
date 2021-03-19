@@ -47,16 +47,24 @@ function App() {
       <Router>
         {!userData.user ? (
           <>
-           < Nav />
-           < Slogan />
+            <Nav />
+            <Slogan />
           </>
         ) : (
           <nav className="nav-wrapper">
-          <img style={{marginLeft:"60px"}} src="https://img.icons8.com/ios/100/000000/tms-tree.png"/>
-          <ul id="nav-mobile" className="right hide-on-med-and-down"></ul>
-          <Link style={{float:"right", paddingRight:"30px"}} to="/" onClick={logout}>
-            Logout
-          </Link>
+            <img
+              style={{ marginLeft: "60px" }}
+              src="https://img.icons8.com/ios/100/000000/tms-tree.png"
+              alt="roots logo"
+            />
+            <ul id="nav-mobile" className="right hide-on-med-and-down"></ul>
+            <Link
+              style={{ float: "right", paddingRight: "30px" }}
+              to="/"
+              onClick={logout}
+            >
+              Logout
+            </Link>
           </nav>
         )}
 
