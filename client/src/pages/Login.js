@@ -40,10 +40,10 @@ const Login = () => {
     <div>
       <form onSubmit={submitLoginForm} className="login-form">
         <h1 style={{padding:"auto"}}>Login:</h1>
-        <label>email</label>
-        <input onChange={onChange} type="text" name="email" />
-        <label>Password</label>
-        <input onChange={onChange} type="text" name="password" />
+        <label style={{color:"black"}}>email</label>
+        <input style={{color:"black", borderBottom: "1px solid grey" }} onChange={onChange} type="text" name="email" />
+        <label style={{color:"black"}}>Password</label>
+        <input style={{color:"black", borderBottom: "1px solid grey" }} onChange={onChange} type="text" name="password" />
         <input style={{marginTop:"20px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" name="Login" />
       </form>
     </div>
