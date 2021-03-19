@@ -55,10 +55,11 @@ body {
   }
 
   .log-Reg {
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     border: 1px black solid;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.609);
+    background-color: rgba(0, 0, 0, 0);
     font-size: 18px;
+    color: black;
   }

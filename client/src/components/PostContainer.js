@@ -7,26 +7,6 @@ const PostContainer = () => {
   const [posts, setPosts] = useState([]);
   const { userData } = useContext(UserContext);
 
-  // const [form, setForm] = useState({ title: "", text: "" });
-
-  // const onChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-
-  // const submitPost = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const newPost = await axios.post("/api/posts", form, {
-  //       headers: { "x-auth-token": localStorage.getItem("auth-token") },
-  //     });
-
-  //     setPosts([...posts, newPost]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   useEffect(() => {
     let cancelToken = axios.CancelToken;
     let source = cancelToken.source();
@@ -50,23 +30,28 @@ const PostContainer = () => {
   const setChat = async (e) => {
     e.preventDefault();
     const btnId = e.target.id;
-    const chatInput = document.getElementById(btnId);
+    const chatInput = document.getElementById("chat" + btnId);
     const dpName = userData.user.displayName;
 
-    const chatObj = {
-      displayName: dpName,
-      userId: btnId,
-      chat: chatInput.value,
-    };
-    try {
-      const newChat = await axios
-        .post("/api/posts/chat", chatObj)
-        .then((res) => {
-          console.log(res);
-        });
-      console.log("newChat", newChat);
-    } catch (err) {
-      console.log(err);
+    if (!chatInput.value) {
+      alert("Please enter your message before sending");
+    } else {
+      const chatObj = {
+        displayName: dpName,
+        userId: btnId,
+        chat: chatInput.value,
+      };
+
+      try {
+        const newChat = await axios
+          .post("/api/posts/chat", chatObj)
+          .then(() => {
+            return;
+          });
+        console.log("newChat", newChat);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -95,6 +80,7 @@ const PostContainer = () => {
               <input
                 style={{ color: "black" }}
                 type="text"
+                id={"chat" + post.userId}
                 className="chatInput"
                 placeholder="Type message here:"
               />
@@ -105,14 +91,16 @@ const PostContainer = () => {
                   backgroundColor: "lightGrey",
                   borderRadius: "10px",
                 }}
-                type="submit"
+                // type="submit"
+                onClick={setChat}
+                id={post.userId}
                 className="chatSubmit"
               >
                 Send
               </button>
             </form>
             {post.chat.map((msg, index) => (
-              <p key={index}>{msg}</p>
+              <p key={index}>{msg.chat}</p>
             ))}
           </div>
         ))}
