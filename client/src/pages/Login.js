@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-
 const Login = () => {
   const [form, setForm] = useState();
   const { userData, setUserData } = useContext(UserContext);
@@ -17,7 +16,7 @@ const Login = () => {
   const submitLoginForm = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/users/login", form);
+      const { data } = await axios.post("api/users/login", form);
       console.log(data);
 
       setUserData({
@@ -39,12 +38,30 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={submitLoginForm} className="login-form">
-        <h1 style={{padding:"auto"}}>Login:</h1>
-        <label style={{color:"black"}}>email</label>
-        <input style={{color:"black", borderBottom: "1px solid grey" }} onChange={onChange} type="text" name="email" />
-        <label style={{color:"black"}}>Password</label>
-        <input style={{color:"black", borderBottom: "1px solid grey" }} onChange={onChange} type="text" name="password" />
-        <input style={{marginTop:"20px", backgroundColor:"lightGrey", borderRadius:"10px"}} type="submit" name="Login" />
+        <h1 style={{ padding: "auto" }}>Login:</h1>
+        <label style={{ color: "black" }}>email</label>
+        <input
+          style={{ color: "black", borderBottom: "1px solid grey" }}
+          onChange={onChange}
+          type="text"
+          name="email"
+        />
+        <label style={{ color: "black" }}>Password</label>
+        <input
+          style={{ color: "black", borderBottom: "1px solid grey" }}
+          onChange={onChange}
+          type="text"
+          name="password"
+        />
+        <input
+          style={{
+            marginTop: "20px",
+            backgroundColor: "lightGrey",
+            borderRadius: "10px",
+          }}
+          type="submit"
+          name="Login"
+        />
       </form>
     </div>
   );
