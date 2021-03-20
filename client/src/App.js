@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
