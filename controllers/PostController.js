@@ -51,7 +51,6 @@ module.exports = {
         }
       );
 
-      // FoundPost.chat.push(chat);
       await Post.updateOne(
         { _id: FoundPost[0]._id },
         {
@@ -60,7 +59,6 @@ module.exports = {
       ).then((res) => {
         return;
       });
-      // res.json(chatPush);
     } catch (err) {
       console.log("setChat post controller", err);
     }

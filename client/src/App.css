@@ -48,23 +48,37 @@
   margin-bottom: 100px;
 }
 body {
-  background: #ffd89b;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #19547b, #ffd89b);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #19547b, #ffd89b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  }
+  background: #ffd89b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #19547b,
+    #ffd89b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #19547b,
+    #ffd89b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-  .log-Reg {
-    margin: 10px;
-    padding: 10px;
-    border: 1px black solid;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 18px;
-    color: black;
-  }
+.log-Reg {
+  margin: 10px;
+  padding: 10px;
+  border: 1px black solid;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 18px;
+  color: black;
+}
 
-  ::placeholder {
-    color: black;
-    
-  }
+::placeholder {
+  color: black;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.shown {
+  visibility: visible;
+}

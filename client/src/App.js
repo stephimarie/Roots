@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -56,6 +57,7 @@ function App() {
             <img
               style={{ marginLeft: "80px", width: "90px", paddingTop: "5px" }}
               src="https://img.icons8.com/ios/100/000000/tms-tree.png"
+              alt="roots logo"
             />
             <ul id="nav-mobile" className="right hide-on-med-and-down"></ul>
             <Link
