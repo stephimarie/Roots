@@ -49,6 +49,9 @@ const PostContainer = () => {
             return;
           });
         console.log("newChat", newChat);
+        const allPosts = await axios.get("/api/posts", {});
+
+        setPosts(allPosts.data);
       } catch (err) {
         console.log(err);
       }
