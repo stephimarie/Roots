@@ -16,9 +16,19 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#text {
+#team {
   width: fit-content;
   margin: auto;
   padding-bottom: 5px;
   padding-top: 5px;
 }
+
+#team a{
+  color: #2b4570;
+}
+
+h5{
+  color: #2b4570;
+}
+
+
