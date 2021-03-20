@@ -4,7 +4,7 @@
 
 ## Description:
 
-Through your roots we grow together. This app that allows you to connect cross-culturally and create multilingual conversations! 
+Roots lets the user create an account and connect on a global forum. The forum displays the user’s native language and languages they are learning or interested in. Users are then able to interact by posting comments on each others posts or they can video chat to facilitate learning and cultural exchange.
 
 ## Demo:
 
