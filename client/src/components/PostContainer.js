@@ -79,7 +79,7 @@ const PostContainer = () => {
             <p>{post.message}</p>
             <form>
               <input
-                style={{ color: "black" }}
+                style={{ color: "black", placeholder:"black" }}
                 type="text"
                 id={"chat" + post.userId}
                 className="chatInput"

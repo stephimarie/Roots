@@ -4,9 +4,9 @@
 
 ## Description:
 
-Through your roots we grow together. This app that allows you to connect cross-culturally and create multilingual conversations! 
+Roots lets the user create an account and connect on a global forum. The forum displays the user’s native language and languages they are learning or interested in. Users are then able to interact by posting comments on each others posts or they can video chat to facilitate learning and cultural exchange.
 
-## Screen Shots:
+## Demo:
 
 
 
@@ -19,15 +19,10 @@ Through your roots we grow together. This app that allows you to connect cross-c
 
 ## Installation:
 
-`git clone URL`
-
- `npm install`
-
-
-## Usage: 
-
- ` npm run dev`
-
+ 1.`git clone URL`
+ 2. In the root directory run `npm install`
+ 3. In the cient directory run `npm install`
+ 4. Run `npm run dev` to start
 
 ## Npm:
 * Bootstrap
