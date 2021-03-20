@@ -70,6 +70,7 @@ const PostContainer = () => {
               background: "rgba(255, 255, 255, 0.250)",
               marginTop: "50px",
               borderRadius: "15px",
+              padding: "10px"
             }}
             className="card"
             key={index}
@@ -100,7 +101,10 @@ const PostContainer = () => {
               </button>
             </form>
             {post.chat.map((msg, index) => (
-              <p key={index}>{msg.chat}</p>
+              <div key={index}>
+                <span><strong>{msg.displayName}:  </strong></span>
+                <span>{msg.chat}</span>
+              </div>
             ))}
           </div>
         ))}
