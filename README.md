@@ -4,11 +4,20 @@
 
 ## Description:
 
-Through your roots we grow together. This app that allows you to connect cross-culturally and create multilingual conversations! 
+Roots lets the user create an account and connect on a global forum. The forum displays the user’s native language and languages they are learning or interested in. Users are then able to interact by posting comments on each others posts or they can video chat to facilitate learning and cultural exchange.
 
-## Screen Shots:
+## Screenshots:
+* Landing Page
+<img width="2048" alt="Screen Shot 2021-03-20 at 12 25 21 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883358-fd606a80-8977-11eb-8e43-6f87723845fc.png">
 
+* Log-in Page
+<img width="2048" alt="Screen Shot 2021-03-20 at 12 26 37 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883359-02251e80-8978-11eb-9b3f-12887b386fc7.png">
 
+* Sign-up Page
+<img width="2048" alt="Screen Shot 2021-03-20 at 12 26 56 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883363-03eee200-8978-11eb-9791-4e9e23e46187.png">
+
+* Home Page
+<img width="2048" alt="Screen Shot 2021-03-20 at 12 28 05 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883360-03564b80-8978-11eb-8f15-3fa16eb8941e.png">
 
 ## BuiltWith:
 
@@ -19,15 +28,10 @@ Through your roots we grow together. This app that allows you to connect cross-c
 
 ## Installation:
 
-`git clone URL`
-
- `npm install`
-
-
-## Usage: 
-
- ` npm run dev`
-
+ 1.`git clone URL`
+ 2. In the root directory run `npm install`
+ 3. In the cient directory run `npm install`
+ 4. Run `npm run dev` to start
 
 ## Npm:
 * Bootstrap
