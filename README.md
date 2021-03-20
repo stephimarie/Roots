@@ -6,7 +6,8 @@
 
 Through your roots we grow together. This app that allows you to connect cross-culturally and create multilingual conversations! 
 
-## Screen Shots:
+## Demo:
+[![roots](http://img.youtube.com/vi/IPadNqYNOfM/0.jpg)](http://www.youtube.com/watch?v=IPadNqYNOfM "Roots")
 
 
 
