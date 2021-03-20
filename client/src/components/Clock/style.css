@@ -13,3 +13,13 @@
         padding-bottom: 0px;
         margin-bottom: 0px;
 }
+
+.timezoneCard {
+        padding: 10px;
+        height: 80px;
+}
+
+.timezoneName, .timezoneDate {
+        margin: 5px;
+        font-weight: bold;
+}
