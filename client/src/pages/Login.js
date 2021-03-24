@@ -28,6 +28,17 @@ const Login = () => {
       history.push("/");
     } catch (err) {
       console.log(err.response);
+      if (err.response.status === 400) {
+        const logErr = document.getElementById("logErr");
+        logErr.innerHTML = err.response.data.msg;
+        logErr.classList.remove("hidden");
+        logErr.classList.add("err");
+      } else if (err.response.status === 401) {
+        const logErr = document.getElementById("passLogErr");
+        logErr.innerHTML = err.response.data.msg;
+        logErr.classList.remove("hidden");
+        logErr.classList.add("err");
+      }
     }
   };
 
@@ -46,6 +57,7 @@ const Login = () => {
           type="text"
           name="email"
         />
+        <p id="logErr" className="hidden"></p>
         <label style={{ color: "black" }}>Password</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
@@ -53,6 +65,7 @@ const Login = () => {
           type="text"
           name="password"
         />
+        <p id="passLogErr" className="hidden"></p>
         <input
           style={{
             marginTop: "20px",

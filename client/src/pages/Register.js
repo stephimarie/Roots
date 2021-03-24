@@ -2,8 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../Context/UserContext.js";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [form, setForm] = useState();
@@ -34,6 +32,11 @@ const Register = () => {
       history.push("/");
     } catch (err) {
       console.log(err.response);
+
+      const regErr = document.getElementById("registerErr");
+      regErr.innerHTML = err.response.data.msg;
+      regErr.classList.remove("hidden");
+      regErr.classList.add("err");
     }
   };
 
@@ -45,6 +48,7 @@ const Register = () => {
     <div>
       <form onSubmit={submit} className="reg-form">
         <h1 style={{ paddingTop: "20px" }}>SignUp:</h1>
+        <p id="registerErr" className="hidden"></p>
         <label style={{ color: "black" }}>Email</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
