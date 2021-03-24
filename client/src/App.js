@@ -56,7 +56,7 @@ function App() {
         ) : (
           <nav className="nav-wrapper">
             <img
-              style={{ marginLeft: "80px", width: "90px", paddingTop: "5px" }}
+              style={{ marginLeft: "215px", width: "90px", paddingTop: "5px" }}
               src="https://img.icons8.com/ios/100/000000/tms-tree.png"
               alt="roots logo"
             />
@@ -71,9 +71,14 @@ function App() {
             <Link
               style={{ float: "right", paddingRight: "30px" }}
               to="/video"
-              onClick={Video}
             >
               Video
+            </Link>
+            <Link
+              style={{ float: "right", paddingRight: "30px" }}
+              to="/home"
+            >
+              Home
             </Link>
           </nav>
         )}
