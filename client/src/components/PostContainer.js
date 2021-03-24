@@ -14,7 +14,6 @@ const PostContainer = () => {
       try {
         const allPosts = await axios.get("/api/posts", {
           cancelToken: source.token,
-          // headers: { "x-auth-token": localStorage.getItem("auth-token") },
         });
 
         setPosts(allPosts.data);
@@ -28,7 +27,6 @@ const PostContainer = () => {
   }, []);
 
   const setChat = async (e) => {
-    e.preventDefault();
     const btnId = e.target.id;
     const chatInput = document.getElementById("chat" + btnId);
     const dpName = userData.user.displayName;
@@ -49,6 +47,9 @@ const PostContainer = () => {
             return;
           });
         console.log("newChat", newChat);
+
+        const allPosts = await axios.get("/api/posts", {});
+        setPosts(allPosts.data);
       } catch (err) {
         console.log(err);
       }
@@ -70,7 +71,7 @@ const PostContainer = () => {
               background: "rgba(255, 255, 255, 0.250)",
               marginTop: "50px",
               borderRadius: "15px",
-              padding: "10px"
+              padding: "15px",
             }}
             className="card"
             key={index}
@@ -79,7 +80,7 @@ const PostContainer = () => {
             <p>{post.message}</p>
             <form>
               <input
-                style={{ color: "black", placeholder:"black" }}
+                style={{ color: "black" }}
                 type="text"
                 id={"chat" + post.userId}
                 className="chatInput"
@@ -102,7 +103,7 @@ const PostContainer = () => {
             </form>
             {post.chat.map((msg, index) => (
               <div key={index}>
-                <span><strong>{msg.displayName}:  </strong></span>
+                <span><strong>{msg.displayName}: </strong></span>
                 <span>{msg.chat}</span>
               </div>
             ))}

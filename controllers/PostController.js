@@ -1,4 +1,5 @@
 const Post = require("../models/postModel");
+const { getUser } = require("./userController");
 
 module.exports = {
   newPost: async (userObj) => {
@@ -51,16 +52,12 @@ module.exports = {
         }
       );
 
-      // FoundPost.chat.push(chat);
       await Post.updateOne(
         { _id: FoundPost[0]._id },
         {
           $push: { chat: chat },
         }
-      ).then((res) => {
-        return;
-      });
-      // res.json(chatPush);
+      );
     } catch (err) {
       console.log("setChat post controller", err);
     }
