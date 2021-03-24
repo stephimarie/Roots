@@ -64,7 +64,7 @@ const Login = () => {
         <p id="logErr" className="hidden"></p>
         <label style={{ color: "black" }}>Password</label>
         <input
-          style={{ color: "black", borderBottom: "1px solid grey" }}
+          style={{ color: "black", borderBottom: "1px solid grey"}}
           onChange={onChange}
           type="text"
           name="password"
