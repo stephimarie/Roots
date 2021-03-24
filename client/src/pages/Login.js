@@ -3,6 +3,8 @@ import UserContext from "../Context/UserContext.js";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
+import Nav from "../components/Navbar/nav"
+import Slogan from "../components/Slogan/slogan"
 
 const Login = () => {
   const [form, setForm] = useState();
@@ -48,6 +50,8 @@ const Login = () => {
 
   return (
     <div>
+      <Nav />
+      <Slogan />
       <form onSubmit={submitLoginForm} className="login-form">
         <h1 style={{ padding: "auto" }}>Login:</h1>
         <label style={{ color: "black" }}>email</label>
