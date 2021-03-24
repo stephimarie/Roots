@@ -42,7 +42,7 @@ Roots lets the user create an account and connect on a global forum. The forum d
 * Express
 * Jsonwebtoken
 * Dotenv
- * React
+* React
 
 ## Contributors:
 * [Stephanie McCandless](https://github.com/stephimarie )
