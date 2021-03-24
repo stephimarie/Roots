@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../Context/UserContext.js";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import Slogan from "../components/Slogan/slogan"
-import Nav from "../components/Navbar/nav"
+import Slogan from "../components/Slogan/slogan";
+import Nav from "../components/Navbar/nav";
 
 const Register = () => {
   const [form, setForm] = useState();
