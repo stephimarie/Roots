@@ -24,10 +24,10 @@ module.exports = {
         !native_lang ||
         !learn_lang
       ) {
-        return res.status(400).json({ msg: "Must enter all the feilds." });
+        return res.status(400).json({ msg: "Must enter all the fields." });
       }
 
-      if (passwordCheck.length < 8) {
+      if (password.length < 8) {
         return res
           .status(400)
           .json({ msg: "password needs to be longer than 8 characters" });
@@ -80,20 +80,23 @@ module.exports = {
     try {
       const { email, password } = req.body;
 
-      if (!email || !password) {
-        res.status(400).json({ msg: "all required fields were not sent" });
+      if (!email) {
+        res.status(400).json({ msg: "please enter an email" });
+      }
+      if (!password) {
+        res.status(401).json({ msg: "please enter a password" });
       }
 
       const user = await User.findOne({ email: email });
       console.log(user);
       if (!user) {
-        res.status(400).json({ msg: "User downs exist" });
+        res.status(400).json({ msg: "User doesn't exist" });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
-        res.status(400).json({ msg: "this was an incorrect password" });
+        res.status(401).json({ msg: "this was an incorrect password" });
       }
 
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
