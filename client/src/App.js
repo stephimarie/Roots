@@ -12,6 +12,7 @@ import Footer from "./components/Footer/footer";
 import Slogan from "./components/Slogan/slogan";
 //import Clock from "react-clock";
 import Landing from "./pages/Landing";
+import Video from "./pages/Video";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -67,6 +68,13 @@ function App() {
             >
               Logout
             </Link>
+            <Link
+              style={{ float: "right", paddingRight: "30px" }}
+              to="/video"
+              onClick={Video}
+            >
+              Video
+            </Link>
           </nav>
         )}
 
@@ -76,6 +84,7 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/video" component={Video} />
           </Switch>
         </UserContext.Provider>
       </Router>

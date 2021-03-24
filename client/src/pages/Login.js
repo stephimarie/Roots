@@ -49,7 +49,7 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={submitLoginForm} className="login-form">
-        <h1 style={{ padding: "auto" }}>Login:</h1>
+        <h1 style={{ padding: "15px" }}>Login:</h1>
         <label style={{ color: "black" }}>email</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
@@ -60,7 +60,7 @@ const Login = () => {
         <p id="logErr" className="hidden"></p>
         <label style={{ color: "black" }}>Password</label>
         <input
-          style={{ color: "black", borderBottom: "1px solid grey" }}
+          style={{ color: "black", borderBottom: "1px solid grey"}}
           onChange={onChange}
           type="text"
           name="password"
