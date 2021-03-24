@@ -28,7 +28,7 @@ Roots lets the user create an account and connect on a global forum. The forum d
 
 ## Installation:
 
- 1.`git clone URL`
+ 1. `git clone URL`
  2. In the root directory run `npm install`
  3. In the cient directory run `npm install`
  4. Run `npm run dev` to start
