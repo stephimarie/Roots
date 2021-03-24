@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../Context/UserContext.js";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Slogan from "../components/Slogan/slogan"
+import Nav from "../components/Navbar/nav"
 
 const Register = () => {
   const [form, setForm] = useState();
@@ -46,8 +48,10 @@ const Register = () => {
 
   return (
     <div>
+      <Nav />
+      <Slogan />
       <form onSubmit={submit} className="reg-form">
-        <h1 style={{ paddingTop: "20px" }}>SignUp:</h1>
+        <h1 style={{ paddingTop: "20px" }}>SignUp</h1>
         <p id="registerErr" className="hidden"></p>
         <label style={{ color: "black" }}>Email</label>
         <input
