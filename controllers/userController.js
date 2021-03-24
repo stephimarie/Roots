@@ -105,7 +105,13 @@ module.exports = {
 
       res.json({
         token,
-        user: { id: user._id, displayName: user.displayName },
+        user: {
+          id: user._id,
+          displayName: user.displayName,
+          // email: user.email,
+          // nativeLang: user.native_lang,
+          // learnLang: user.learn_lang,
+        },
       });
     } catch (err) {
       res.status(500).json({ msg: err });
@@ -119,6 +125,23 @@ module.exports = {
       res.json({
         displayName: user.displayName,
         id: user._id,
+      });
+    } catch (err) {
+      res.send(err.response);
+    }
+  },
+
+  getProf: async (req, res) => {
+    try {
+      console.log("req", req.query[0]);
+      const getpro = await User.findOne({ displayName: req.query[0] });
+
+      res.json({
+        // displayName: profile.displayName,
+        // email: profile.email,
+        // nativeLang: profile.native_lang,
+        // learnLang: profile.learn_lang,
+        getpro,
       });
     } catch (err) {
       res.send(err.response);

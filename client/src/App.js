@@ -12,6 +12,7 @@ import Footer from "./components/Footer/footer";
 import Slogan from "./components/Slogan/slogan";
 //import Clock from "react-clock";
 import Landing from "./pages/Landing";
+import Profile from "./pages/Profile";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -28,7 +29,6 @@ function App() {
       const userRes = await axios.get("/api/users", {
         headers: { "x-auth-token": token },
       });
-
       setUserData({ token, user: userRes.data });
     } catch (err) {
       console.log("User must login");
@@ -48,10 +48,7 @@ function App() {
     <div className="App">
       <Router>
         {!userData.user ? (
-          <>
-            
-  
-          </>
+          <></>
         ) : (
           <nav className="nav-wrapper">
             <img
@@ -76,6 +73,7 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/profile" component={Profile} />
           </Switch>
         </UserContext.Provider>
       </Router>
