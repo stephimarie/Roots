@@ -79,6 +79,7 @@ body {
   visibility: hidden;
 }
 
-.shown {
-  visibility: visible;
+.err {
+  color: red;
+  font-weight: 800;
 }

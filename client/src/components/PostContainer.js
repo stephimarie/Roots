@@ -27,7 +27,6 @@ const PostContainer = () => {
   }, []);
 
   const setChat = async (e) => {
-    e.preventDefault();
     const btnId = e.target.id;
     const chatInput = document.getElementById("chat" + btnId);
     const dpName = userData.user.displayName;
