@@ -53,7 +53,7 @@ const Login = () => {
       <Nav />
       <Slogan />
       <form onSubmit={submitLoginForm} className="login-form">
-        <h1 style={{ padding: "auto" }}>Login:</h1>
+        <h1 style={{ padding: "20px" }}>Login</h1>
         <label style={{ color: "black" }}>email</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
