@@ -103,7 +103,7 @@ const PostContainer = () => {
             </form>
             {post.chat.map((msg, index) => (
               <div key={index}>
-                <h6>{msg.displayName}</h6>
+                <h6><strong>{msg.displayName}:</strong></h6>
                 <p>{msg.chat}</p>
               </div>
             ))}
