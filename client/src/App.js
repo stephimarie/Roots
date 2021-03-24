@@ -12,6 +12,7 @@ import Footer from "./components/Footer/footer";
 import Slogan from "./components/Slogan/slogan";
 //import Clock from "react-clock";
 import Landing from "./pages/Landing";
+import Video from "./pages/Video";
 import Profile from "./pages/Profile";
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
         ) : (
           <nav className="nav-wrapper">
             <img
-              style={{ marginLeft: "80px", width: "90px", paddingTop: "5px" }}
+              style={{ marginLeft: "215px", width: "90px", paddingTop: "5px" }}
               src="https://img.icons8.com/ios/100/000000/tms-tree.png"
               alt="roots logo"
             />
@@ -64,6 +65,18 @@ function App() {
             >
               Logout
             </Link>
+            <Link
+              style={{ float: "right", paddingRight: "30px" }}
+              to="/video"
+            >
+              Video
+            </Link>
+            <Link
+              style={{ float: "right", paddingRight: "30px" }}
+              to="/home"
+            >
+              Home
+            </Link>
           </nav>
         )}
 
@@ -73,6 +86,7 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/video" component={Video} />
             <Route path="/profile" component={Profile} />
           </Switch>
         </UserContext.Provider>

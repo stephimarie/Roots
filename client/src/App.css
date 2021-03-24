@@ -46,6 +46,9 @@
   margin-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
 }
 body {
   background: #ffd89b; /* fallback for old browsers */

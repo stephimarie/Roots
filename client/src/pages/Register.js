@@ -51,7 +51,7 @@ const Register = () => {
       <Nav />
       <Slogan />
       <form onSubmit={submit} className="reg-form">
-        <h1 style={{ paddingTop: "20px" }}>SignUp:</h1>
+        <h1 style={{ paddingTop: "20px" }}>SignUp</h1>
         <p id="registerErr" className="hidden"></p>
         <label style={{ color: "black" }}>Email</label>
         <input

@@ -8,7 +8,7 @@ const Landing = () => {
     return (
         <div>
         <nav className="nav-wrapper">
-        <img style={{marginLeft:"-20px"}}
+        <img style={{marginLeft:"10px"}}
           id="logo"
           src="https://img.icons8.com/ios/100/000000/tms-tree.png"
           alt="roots logo"
