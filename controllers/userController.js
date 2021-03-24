@@ -136,13 +136,7 @@ module.exports = {
       console.log("req", req.query[0]);
       const getpro = await User.findOne({ displayName: req.query[0] });
 
-      res.json({
-        // displayName: profile.displayName,
-        // email: profile.email,
-        // nativeLang: profile.native_lang,
-        // learnLang: profile.learn_lang,
-        getpro,
-      });
+      res.json({ getpro });
     } catch (err) {
       res.send(err.response);
     }

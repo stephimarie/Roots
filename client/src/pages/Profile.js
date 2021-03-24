@@ -1,9 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import UserContext from "../Context/UserContext.js";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
-import Nav from "../components/Navbar/nav";
-import Slogan from "../components/Slogan/slogan";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
@@ -19,11 +16,9 @@ const Profile = () => {
           headers: { "x-auth-token": token },
         });
         const display = userRes.data.displayName;
-        console.log(display);
         const profileData = await axios.get("/api/users/profile", {
           params: display,
         });
-        console.log("profileData", profileData);
         setProfile(profileData.data.getpro);
       } catch (err) {
         console.log(err);
