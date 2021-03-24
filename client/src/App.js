@@ -10,7 +10,7 @@ import Nav from "./components/Navbar/nav";
 import UserContext from "./Context/UserContext";
 import Footer from "./components/Footer/footer";
 import Slogan from "./components/Slogan/slogan";
-import Clock from "react-clock";
+//import Clock from "react-clock";
 import Landing from "./pages/Landing";
 
 function App() {
