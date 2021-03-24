@@ -50,8 +50,8 @@ function App() {
       <Router>
         {!userData.user ? (
           <>
-            <Nav />
-            <Slogan />
+            
+  
           </>
         ) : (
           <nav className="nav-wrapper">
