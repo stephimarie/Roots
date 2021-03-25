@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 const Video = () => {
     return (
         <div>
-            <h3>Helooo</h3>
+            <h3>Through our roots we connect</h3>
         </div>
         )
 }
