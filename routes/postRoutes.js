@@ -4,6 +4,7 @@ const {
   newPost,
   getUserPosts,
   sendChat,
+  selfPost,
 } = require("../controllers/PostController");
 
 router.post("/", auth, newPost);
@@ -11,5 +12,7 @@ router.post("/", auth, newPost);
 router.get("/", getUserPosts);
 
 router.post("/chat", sendChat);
+
+router.get("/profile", selfPost);
 
 module.exports = router;
