@@ -6,8 +6,7 @@ import PostContainer from "../components/PostContainer";
 // import ClockApp from "../components/Clock/clock";
 import ClockApp from "../components/Clock/Clock2";
 
-
-const Home = (props) => {
+const Home = () => {
   const { userData } = useContext(UserContext);
   const history = useHistory();
 

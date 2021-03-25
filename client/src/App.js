@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -13,6 +12,7 @@ import Slogan from "./components/Slogan/slogan";
 //import Clock from "react-clock";
 import Landing from "./pages/Landing";
 import Video from "./pages/Video";
+import Profile from "./pages/Profile";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -29,7 +29,6 @@ function App() {
       const userRes = await axios.get("/api/users", {
         headers: { "x-auth-token": token },
       });
-
       setUserData({ token, user: userRes.data });
     } catch (err) {
       console.log("User must login");
@@ -49,10 +48,7 @@ function App() {
     <div className="App">
       <Router>
         {!userData.user ? (
-          <>
-            
-  
-          </>
+          <></>
         ) : (
           <nav className="nav-wrapper">
             <img
@@ -70,14 +66,15 @@ function App() {
             </Link>
             <Link
               style={{ float: "right", paddingRight: "30px" }}
-              to="/video"
+              to="/profile"
             >
+              Profile
+            </Link>
+            <Link style={{ float: "right", paddingRight: "30px" }} to="/video">
               Video
             </Link>
-            <Link
-              style={{ float: "right", paddingRight: "30px" }}
-              to="/home"
-            >
+
+            <Link style={{ float: "right", paddingRight: "30px" }} to="/home">
               Home
             </Link>
           </nav>
@@ -90,6 +87,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/video" component={Video} />
+            <Route path="/profile" component={Profile} />
           </Switch>
         </UserContext.Provider>
       </Router>

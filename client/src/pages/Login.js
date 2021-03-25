@@ -3,8 +3,8 @@ import UserContext from "../Context/UserContext.js";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
-import Nav from "../components/Navbar/nav"
-import Slogan from "../components/Slogan/slogan"
+import Nav from "../components/Navbar/nav";
+import Slogan from "../components/Slogan/slogan";
 
 const Login = () => {
   const [form, setForm] = useState();
@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post("api/users/login", form);
-      console.log(data);
+      console.log("data", data);
 
       setUserData({
         token: data.token,
