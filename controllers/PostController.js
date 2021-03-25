@@ -62,4 +62,13 @@ module.exports = {
       console.log("setChat post controller", err);
     }
   },
+
+  selfPost: async (req, res) => {
+    try {
+      const post = await Post.findOne({ displayName: req.query[0] });
+      res.json({ post });
+    } catch (err) {
+      res.send(err.response);
+    }
+  },
 };

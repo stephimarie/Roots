@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -67,14 +66,15 @@ function App() {
             </Link>
             <Link
               style={{ float: "right", paddingRight: "30px" }}
-              to="/video"
+              to="/profile"
             >
+              Profile
+            </Link>
+            <Link style={{ float: "right", paddingRight: "30px" }} to="/video">
               Video
             </Link>
-            <Link
-              style={{ float: "right", paddingRight: "30px" }}
-              to="/home"
-            >
+
+            <Link style={{ float: "right", paddingRight: "30px" }} to="/home">
               Home
             </Link>
           </nav>
