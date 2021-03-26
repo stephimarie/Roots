@@ -19,7 +19,6 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post("api/users/login", form);
-      console.log("data", data);
 
       setUserData({
         token: data.token,
@@ -64,9 +63,9 @@ const Login = () => {
         <p id="logErr" className="hidden"></p>
         <label style={{ color: "black" }}>Password</label>
         <input
-          style={{ color: "black", borderBottom: "1px solid grey"}}
+          style={{ color: "black", borderBottom: "1px solid grey" }}
           onChange={onChange}
-          type="text"
+          type="password"
           name="password"
         />
         <p id="passLogErr" className="hidden"></p>

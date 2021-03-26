@@ -68,7 +68,7 @@ module.exports = {
       const post = await Post.findOne({ displayName: req.query[0] });
       res.json({ post });
     } catch (err) {
-      res.send(err.response);
+      res.send(err);
     }
   },
 };

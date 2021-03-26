@@ -88,7 +88,7 @@ module.exports = {
       }
 
       const user = await User.findOne({ email: email });
-      console.log(user);
+
       if (!user) {
         res.status(400).json({ msg: "User doesn't exist" });
       }
@@ -133,7 +133,6 @@ module.exports = {
 
   getProf: async (req, res) => {
     try {
-      console.log("req", req.query[0]);
       const getpro = await User.findOne({ displayName: req.query[0] });
 
       res.json({ getpro });

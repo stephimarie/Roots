@@ -19,9 +19,6 @@ const Register = () => {
 
     try {
       const newUser = await axios.post("/api/users/register", form);
-      console.log(newUser);
-      // history.push("/login");
-      console.log(form);
       const { data } = await axios.post("api/users/login", {
         email: form.email,
         password: form.password,

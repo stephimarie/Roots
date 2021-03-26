@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
+import ProfileChat from "../components/ProfileChat";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
-  const [selfPost, setSelf] = useState([]);
 
   useEffect(() => {
     let token = localStorage.getItem("auth-token");
@@ -25,22 +25,7 @@ const Profile = () => {
         console.log(err);
       }
     })();
-    (async () => {
-      try {
-        const userPost = await axios.get("/api/users", {
-          headers: { "x-auth-token": token },
-        });
-        const display = userPost.data.displayName;
-        const selfData = await axios.get("/api/posts/profile", {
-          params: display,
-        });
-        setSelf(selfData.data.post);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
   }, []);
-
   return (
     <div id="profilePage">
       <ul>
@@ -63,16 +48,9 @@ const Profile = () => {
             padding: "15px",
           }}
           className="card"
+          id="mapPlace"
         >
-          <p>{selfPost.message}</p>
-          {selfPost.chat.map((msg, index) => (
-            <div key={index}>
-              <span>
-                <strong>{msg.displayName}: </strong>
-              </span>
-              <span>{msg.chat}</span>
-            </div>
-          ))}
+          <ProfileChat />
         </div>
       </div>
     </div>

@@ -46,7 +46,6 @@ const PostContainer = () => {
           .then(() => {
             return;
           });
-        console.log("newChat", newChat);
 
         const allPosts = await axios.get("/api/posts", {});
         setPosts(allPosts.data);
@@ -103,7 +102,9 @@ const PostContainer = () => {
             </form>
             {post.chat.map((msg, index) => (
               <div key={index}>
-                <span><strong>{msg.displayName}: </strong></span>
+                <span>
+                  <strong>{msg.displayName}: </strong>
+                </span>
                 <span>{msg.chat}</span>
               </div>
             ))}
