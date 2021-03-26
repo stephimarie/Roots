@@ -52,7 +52,7 @@ function App() {
         ) : (
           <nav className="nav-wrapper">
             <img
-              style={{ marginLeft: "215px", width: "90px", paddingTop: "5px" }}
+              style={{ marginLeft: "290px", width: "90px", paddingTop: "5px" }}
               src="https://img.icons8.com/ios/100/000000/tms-tree.png"
               alt="roots logo"
             />
