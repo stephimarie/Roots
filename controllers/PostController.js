@@ -1,5 +1,4 @@
 const Post = require("../models/postModel");
-const { getUser } = require("./userController");
 
 module.exports = {
   newPost: async (userObj) => {
