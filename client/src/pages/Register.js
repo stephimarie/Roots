@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const newUser = await axios.post("/api/users/register", form);
+      await axios.post("/api/users/register", form);
       const { data } = await axios.post("api/users/login", {
         email: form.email,
         password: form.password,
@@ -43,6 +43,18 @@ const Register = () => {
     if (userData.user) history.push("/");
   }, [userData.user, history]);
 
+  const passChange = (e) => {
+    const passInput = document.getElementById("inputPass").value;
+    const passCheckInput = document.getElementById("inputCheck").value;
+    if (passInput !== passCheckInput) {
+      passErr.classList.remove("hidden");
+    }
+    if (passInput === passCheckInput) {
+      passErr.classList.add("hidden");
+    }
+  };
+  const passErr = document.getElementById("passCheck");
+
   return (
     <div>
       <Nav />
@@ -60,17 +72,22 @@ const Register = () => {
         <label style={{ color: "black" }}>Password</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
-          onChange={onChange}
-          type="text"
+          onChange={(onChange, passChange)}
+          type="password"
           name="password"
+          id="inputPass"
         />
         <label style={{ color: "black" }}>Password Check</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
-          onChange={onChange}
-          type="text"
+          onChange={(onChange, passChange)}
+          type="password"
           name="passwordCheck"
+          id="inputCheck"
         />
+        <p className="hidden err" id="passCheck">
+          Password doesn't Match
+        </p>
         <label style={{ color: "black" }}>Display Name</label>
         <input
           style={{ color: "black", borderBottom: "1px solid grey" }}
