@@ -19,7 +19,6 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post("api/users/login", form);
-      console.log("data", data);
 
       setUserData({
         token: data.token,
