@@ -9,7 +9,7 @@ app.use(express.json());
 
 //mongoose connection
 mongoose.connect(
-  process.env.MONGO_URI || "mongodb://localhost/roots",
+  process.env.MONGODB_URI || "mongodb://localhost/Roots",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
