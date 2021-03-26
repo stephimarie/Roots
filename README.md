@@ -8,7 +8,7 @@ Roots lets the user create an account and connect on a global forum. The forum d
 
 ## Screenshots:
 * Landing Page
-<img width="2048" alt="Screen Shot 2021-03-20 at 12 25 21 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883358-fd606a80-8977-11eb-8e43-6f87723845fc.png">
+<img width="2048" alt="Screen Shot 2021-03-25 at 1 24 04 PM (2)" src="https://user-images.githubusercontent.com/68761490/112538750-6e839180-8d6d-11eb-8cea-c1b12025aafe.png">
 
 * Log-in Page
 <img width="2048" alt="Screen Shot 2021-03-20 at 12 26 37 PM (2)" src="https://user-images.githubusercontent.com/68761490/111883359-02251e80-8978-11eb-9b3f-12887b386fc7.png">
@@ -22,6 +22,7 @@ Roots lets the user create an account and connect on a global forum. The forum d
 ## BuiltWith:
 
 * NodeJS
+* JavaScript
 * Express
 * ReactJS
 * Materialize

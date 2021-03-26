@@ -1,23 +1,11 @@
 import {useState, useEffect} from "react";
 import './style.css';
-// import moment from "moment";
 import moment from "moment-timezone";
 import Timezone from "./Timezone";
 
 const Clock2 = () => {
     const [date,setDate] = useState(moment())
-    // useEffect(() => {
-    //     let timer= setInterval(()=>{
-    //         setDate(new Date())
-    //         console.log(date)
-    //     },3000)
-    //     return () => {
-    //         clearInterval(timer)
-    //     }
-    // }, [])
-
-// const timezones = moment().format('LTS');
-//     const SF = 
+    
     useEffect(() => {
         const time = setInterval(getCurrentTime, 1000)
         return () => {
