@@ -52,6 +52,9 @@ Roots lets the user create an account and connect on a global forum. The forum d
 * [Michael Burkett](https://github.com/cadeburkett)
 * [Lara Zegart](https://github.com/lzegart)
 
+## Links:
+[Live App](https://our-roots.herokuapp.com/)
+
 
 
 
